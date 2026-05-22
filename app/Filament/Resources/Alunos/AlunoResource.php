@@ -12,7 +12,9 @@ use BackedEnum;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
+use Filament\Tables;
 use Filament\Tables\Table;
+use Filament\Tables\Columns\TextColumn;
 
 class AlunoResource extends Resource
 {
@@ -29,7 +31,34 @@ class AlunoResource extends Resource
 
     public static function table(Table $table): Table
     {
-        return AlunosTable::configure($table);
+        return $table
+        ->columns([
+            TextColumn::make('id')
+                ->label('ID')
+                ->sortable(),
+
+            TextColumn::make('nome')
+                ->label('Nome')
+                ->searchable(),
+
+            TextColumn::make('email')
+                ->label('E-mail')
+                ->searchable(),
+
+            TextColumn::make('created_at')
+                ->label('Criado em')
+                ->dateTime('d/m/Y'),
+        ])
+        ->filters([
+            //
+        ])
+        ->actions([
+            \Filament\Actions\EditAction::make(),
+            \Filament\Actions\DeleteAction::make(),
+        ])
+        ->bulkActions([
+            \Filament\Actions\DeleteBulkAction::make()
+        ]);
     }
 
     public static function getRelations(): array

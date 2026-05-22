@@ -12,13 +12,11 @@ class Movimentacao extends Model
         'tipo',
         'motivo',
         'responsavel',
-        'status_professor',
         'status_portaria',
         'horario',
     ];
 
     protected $casts = [
-        'status_professor' => 'boolean',
         'status_portaria' => 'boolean',
         'horario' => 'datetime',
     ];

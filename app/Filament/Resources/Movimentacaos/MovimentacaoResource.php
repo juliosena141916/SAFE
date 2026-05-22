@@ -12,7 +12,10 @@ use BackedEnum;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
+use Filament\Tables;
 use Filament\Tables\Table;
+use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Columns\IconColumn;
 
 class MovimentacaoResource extends Resource
 {
@@ -29,7 +32,47 @@ class MovimentacaoResource extends Resource
 
     public static function table(Table $table): Table
     {
-        return MovimentacaosTable::configure($table);
+        return $table
+        ->columns([
+            TextColumn::make('id')
+                ->label('ID')
+                ->sortable(),
+
+            TextColumn::make('aluno.nome')
+                ->label('Aluno')
+                ->searchable(),
+
+            TextColumn::make('tipo')
+                ->label('Tipo')
+                ->badge(),
+
+            TextColumn::make('motivo')
+                ->label('Motivo')
+                ->limit(30),
+
+            TextColumn::make('responsavel')
+                ->label('Responsável'),
+
+            IconColumn::make('status_portaria')
+                ->label('Portaria')
+                ->boolean(),
+
+            TextColumn::make('horario')
+                ->label('Horário')
+                ->dateTime('d/m/Y H:i'),
+        ])
+
+        ->actions([
+            \Filament\Actions\EditAction::make(),
+
+            \Filament\Actions\DeleteAction::make()
+                ->requiresConfirmation(),
+        ])
+
+        ->bulkActions([
+            \Filament\Actions\DeleteBulkAction::make()
+                ->requiresConfirmation(),
+        ]);
     }
 
     public static function getRelations(): array
