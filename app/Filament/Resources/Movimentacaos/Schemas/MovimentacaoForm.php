@@ -46,14 +46,6 @@ class MovimentacaoForm
                     ->label('Horário')
                     ->required(),
 
-                Toggle::make('status_professor')
-                    ->label('Professor Autorizou')
-                    ->default(false),
-
-                Toggle::make('status_portaria')
-                    ->label('Portaria Liberou')
-                    ->default(false),
-
             ]);
     }
 }

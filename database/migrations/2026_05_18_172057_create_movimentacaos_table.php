@@ -26,9 +26,6 @@ return new class extends Migration
             $table->string('responsavel')
                 ->nullable();
 
-            $table->boolean('status_portaria')
-                ->default(false);
-
             $table->timestamp('horario');
 
             $table->timestamps();

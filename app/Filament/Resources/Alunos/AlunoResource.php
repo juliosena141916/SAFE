@@ -41,10 +41,6 @@ class AlunoResource extends Resource
                 ->label('Nome')
                 ->searchable(),
 
-            TextColumn::make('email')
-                ->label('E-mail')
-                ->searchable(),
-
             TextColumn::make('created_at')
                 ->label('Criado em')
                 ->dateTime('d/m/Y'),

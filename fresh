@@ -1,0 +1,22 @@
+
+   Error 
+
+  Typed static property Filament\Resources\Pages\Page::$resource must not be accessed before initialization
+
+  at vendor\filament\filament\src\Resources\Pages\Page.php:266
+    [90m262[0m[90m▕ [0m[90;3m     * @return class-string[0m
+    [90m263[0m[90m▕ [0m[90;3m     */[0m
+    [90m264[0m[90m▕ [0m[90;3m    [0m[35;1mpublic static function [0m[39;1mgetResource[0m[35;1m(): [0m[39;1mstring[0m
+    [90m265[0m[90m▕ [0m[39;1m    [0m[35;1m{[0m
+[31;1m  ➜ [0m[3;1m266[0m[90m▕ [0m[35;1m        return static::[0m[39;1m$resource[0m[35;1m;[0m
+    [90m267[0m[90m▕ [0m[35;1m    }[0m
+    [90m268[0m[90m▕ [0m
+    [90m269[0m[90m▕ [0m[35;1m    [0m[90;3m/**[0m
+    [90m270[0m[90m▕ [0m[90;3m     * @return array<string>[0m
+
+  1   vendor\filament\filament\src\Resources\Pages\Page.php:142
+      Filament\Resources\Pages\Page::getResource()
+
+  2   vendor\filament\filament\src\Pages\Concerns\HasRoutes.php:91
+      Filament\Resources\Pages\Page::isEmailVerificationRequired(Object(Filament\Panel))
+
