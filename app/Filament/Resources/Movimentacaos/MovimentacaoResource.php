@@ -16,6 +16,7 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Columns\IconColumn;
+use Filament\Forms\Components\Select;
 
 class MovimentacaoResource extends Resource
 {
