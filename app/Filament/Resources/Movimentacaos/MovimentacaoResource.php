@@ -46,6 +46,10 @@ class MovimentacaoResource extends Resource
                 ->label('Tipo')
                 ->badge(),
 
+            TextColumn::make('faltas')
+                ->label('Faltas')
+                ->badge(),    
+
             TextColumn::make('motivo')
                 ->label('Motivo')
                 ->limit(30),

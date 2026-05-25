@@ -18,7 +18,16 @@ return new class extends Migration
 
             $table->enum('tipo', [
                 'atraso',
-                'saida_antecipada'
+                'saida antecipada'
+            ]);
+
+            $table->enum('faltas', [
+                '0',
+                '1',
+                '2',
+                '3',
+                '4',
+                '5'
             ]);
 
             $table->text('motivo');

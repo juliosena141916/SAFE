@@ -10,6 +10,7 @@ class Movimentacao extends Model
     protected $fillable = [
         'aluno_id',
         'tipo',
+        'faltas',
         'motivo',
         'responsavel',
         'horario',
