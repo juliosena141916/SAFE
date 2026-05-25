@@ -22,9 +22,9 @@ class PortariaResource extends Resource
 
     protected static ?string $navigationLabel = 'Portarias';
 
-protected static ?string $pluralModelLabel = 'Portarias';
+    protected static ?string $pluralModelLabel = 'Portarias';
 
-protected static ?string $modelLabel = 'Portaria';
+    protected static ?string $modelLabel = 'Portaria';
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 

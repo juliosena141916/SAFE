@@ -17,6 +17,7 @@ class PortariasTable
             ->columns([
                 TextColumn::make('id'),
                 TextColumn::make('aluno_id')->searchable(),
+                TextColumn::make('aluno.nome'),
                 TextColumn::make('tipo'),
                 TextColumn::make('faltas'),
                 TextColumn::make('motivo'),

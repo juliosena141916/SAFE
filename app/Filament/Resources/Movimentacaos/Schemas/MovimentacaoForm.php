@@ -27,6 +27,10 @@ class MovimentacaoForm
                     ->searchable()
                     ->required(),
 
+                Select::make('nome')
+                    ->label('Nome')
+                    ->searchable(),
+
                 Select::make('tipo')
                     ->label('Tipo')
                     ->options([
